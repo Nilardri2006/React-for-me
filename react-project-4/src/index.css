@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 40px;
+  background: linear-gradient(to left, rgb(49, 49, 54), rgb(4, 2, 34));
+}
+
+h1 {
+  color: rgb(173, 186, 193);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.roney {
+  color: rgb(239, 231, 231);
+  display: flex;
+  justify-content: center;
+  max-width: 1024px;
+  margin: 0px auto;
+  flex-wrap: wrap;
+
+}
+
+.card {
+  border: 2px solid #BDBAC9;
+  padding: 20px;
+  margin: 10px;
+  background-color: #303035;
+  border-radius: 25px;
+  min-height: 100 px;
+}
+
+button {
+  border: none;
+  font-size: 30px;
+  background-color: transparent;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+
+}
