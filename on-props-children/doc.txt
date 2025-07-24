@@ -1,0 +1,106 @@
+📁 File Structure Involved:
+App.jsx: Main component where the counter logic lives.
+
+Button.jsx: A reusable Button component that handles user clicks.
+
+⚙️ How It Works (Step-by-Step):
+🧠 1. useState(0) – What It Does:
+js
+Copy
+Edit
+const [count, setcount] = useState(0);
+This line creates a state variable count initialized to 0.
+
+setcount is a function used to update the value of count.
+
+Whenever setcount() is called, React re-renders the component with the new state.
+
+🎯 2. handleClick Function:
+js
+Copy
+Edit
+function handleClick(){
+  setcount(count + 1);
+}
+This function is triggered when the button is clicked.
+
+It increments the current count by 1 using setcount.
+
+🧩 3. <Button /> Component Usage:
+jsx
+Copy
+Edit
+<Button handleClick={handleClick} text="Click Me">
+  <h1>{count}</h1>
+</Button>
+You are passing 3 things to Button:
+
+handleClick: the function to run on click.
+
+text: the label of the button.
+
+children: the content inside the Button tag — here it's <h1>{count}</h1>.
+
+🏗️ 4. Inside Button.jsx:
+js
+Copy
+Edit
+<div>
+  {props.children} // Displays <h1>{count}</h1>
+  <button onClick={props.handleClick}> 
+    {props.text} // Displays "Click Me"
+  </button>
+</div>
+props.children: renders whatever you passed between <Button>...</Button>, in this case the <h1>{count}</h1>.
+
+props.handleClick: binds the click event to your handleClick function.
+
+props.text: sets the button's text to "Click Me".
+
+🧪 What Happens When You Click:
+You click the button.
+
+handleClick() gets called.
+
+setcount(count + 1) runs → updates the count.
+
+React sees the state changed and re-renders the <App /> component.
+
+The new value of count shows up inside the <h1>.
+
+🔁 Visual Flow Summary:
+plaintext
+Copy
+Edit
+User Clicks Button
+       ↓
+<Button onClick={handleClick}>
+       ↓
+handleClick() updates count via setcount()
+       ↓
+React rerenders App component
+       ↓
+<h1>{count}</h1> gets updated with new value
+✅ Output Example:
+Before click:
+
+css
+Copy
+Edit
+0
+[ Click Me ]
+After 1 click:
+
+css
+Copy
+Edit
+1
+[ Click Me ]
+After 2 clicks:
+
+css
+Copy
+Edit
+2
+[ Click Me ]
+…and so on 🚀
